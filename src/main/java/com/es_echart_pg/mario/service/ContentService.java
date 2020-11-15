@@ -28,7 +28,7 @@ public class ContentService {
         BulkRequest bulkRequest = new BulkRequest();
         bulkRequest.timeout("3m");
         bookContents.forEach(bookContent -> {
-            bulkRequest.add(new IndexRequest("").source(JSON.toJSONString(bookContent), XContentType.JSON));
+            bulkRequest.add(new IndexRequest("jd_goods").source(JSON.toJSONString(bookContent), XContentType.JSON));
         });
         BulkResponse bulk = restHighLevelClient.bulk(bulkRequest, RequestOptions.DEFAULT);
         return !bulk.hasFailures();
