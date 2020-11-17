@@ -21,15 +21,16 @@ public class ReptileData {
         Element elementById = document.getElementById("J_goodsList");//div
         Elements elementsByTag = elementById.getElementsByTag("li");
         elementsByTag.forEach(element -> {
-            String pSrc = element.getElementsByTag("img").attr("src");
+            String pSrc = element.getElementsByTag("img").attr("data-lazy-img");//图片懒加载
             String price  = element.getElementsByTag("i").text();//
-            String pName = element.getElementsByClass("p-name p-name-type-2").text();
+            String pName = element.getElementsByClass("p-name").text();
             BookContent bookContent = new BookContent();
             bookContent.setBookName(pName);
-            bookContent.setBookPrice(price);
+            bookContent.setBookPrice(price.split("")[0]);
             bookContent.setPictureSrc(pSrc);
             bookContents.add(bookContent);
         });
+        System.out.println("获取的数据："+bookContents.toString());
         return bookContents;
     }
 }
