@@ -111,7 +111,17 @@ listener例如：
     public void onFailure(Exception e) {
     }
 };`
+常用的方法：
 
+`termQuery(String name, Object value)`匹配
+
+`fuzzyQuery(String name, Object value)`模糊查询
+
+`prefixQuery(String name, String prefix)`包含前缀
+
+`rangeQuery(String name)`范围
+
+`regexpQuery(String name, String regexp)`正则表达式
 
 
 
