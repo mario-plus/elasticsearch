@@ -56,7 +56,6 @@ public class ContentService {
         SearchRequest searchRequest = new SearchRequest("jd_goods");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("bookName", keyword);
-
         searchSourceBuilder.query(termQueryBuilder).timeout(new TimeValue(60, TimeUnit.SECONDS));
         searchSourceBuilder.size(30);//默认十条
         searchRequest.source(searchSourceBuilder);
@@ -71,5 +70,7 @@ public class ContentService {
         return list;
     }
     //endregion
+
+
 
 }
