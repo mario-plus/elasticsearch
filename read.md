@@ -111,6 +111,7 @@ listener例如：
     public void onFailure(Exception e) {
     }
 };`
+常用的方法：
 
 `termQuery(String name, Object value)`匹配
 
@@ -121,8 +122,6 @@ listener例如：
 `rangeQuery(String name)`范围
 
 `regexpQuery(String name, String regexp)`正则表达式
-
-
 
 
 
